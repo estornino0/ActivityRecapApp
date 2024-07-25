@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Select a period</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/jieter/Leaflet.encoded/master/Polyline.encoded.js"></script>
+    <script type="text/javascript" th:src="@{/script.js}" defer></script>
+    <link th:href="@{styles.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="top-bar">
+    <div></div>
+    <div class="tittle">
+        <h1>View your activity recap</h1>
+    </div>
+    <div class="button-container">
+        <div class="button">
+            <a th:href="@{/deauthorize}">Deauthorize</a>
+        </div>
+    </div>
+</div>
+<div class="form-container">
+    <h3>
+        Pick a date interval
+    </h3>
+    <div>
+        <form id="date-form">
+            <div class="form-elements">
+                <input class="date-picker" type="date" id="start_date" name="start_date" required>
+                <label for="end_date"> - </label>
+                <input class="date-picker" type="date" id="end_date" name="end_date" required>
+                <select id="predefined-ranges" class="clickable">
+                    <option value="">Custom Interval</option>
+                    <option value="last-year">Last Year</option>
+                    <option value="this-year">This Year</option>
+                    <option value="last-three-month">Last Three Months</option>
+                </select>
+            </div>
+            <button type="submit" class="clickable">Submit</button>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="header">
+        <div>
+            <div class="activities-attribute-label">Activities</div>
+            <div id="activities" class="activities-attribute"></div>
+        </div>
+        <div>
+            <div class="activities-attribute-label">Distance</div>
+            <div id="distance" class="activities-attribute"></div>
+        </div>
+        <div>
+            <div class="activities-attribute-label">Duration</div>
+            <div id="duration" class="activities-attribute"></div>
+        </div>
+    </div>
+    <div  id="map" class="map"></div>
+</div>
+
+</body>
+</html>

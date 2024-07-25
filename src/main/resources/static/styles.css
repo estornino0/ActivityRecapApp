@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #decaba;
+    height: 100vh;
+}
+.top-bar {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 33% 33% 33%;
+  align-items: start;
+  justify-content: space-between;
+}
+.tittle {
+    flex-grow: 1;
+    text-align: center;
+   margin-top:10px;
+}
+
+.button a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #795639;
+  border-radius: 3px;
+}
+
+.button a:hover {
+    background-color: #cecdca;
+}
+
+.button a:active {
+    background-color: #b6b4af;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+
+.form-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f2ee;
+    border-radius: 5px;
+}
+
+.form-container form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.form-container form label,
+.form-container form input {
+    margin-right: 10px;
+}
+
+.form-elements{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-container h3 {
+    margin-top: 0px;
+}
+
+.date-picker {
+	background-color: #fff;
+	border: 2px solid #795639;
+	border-radius: 3px;
+}
+
+.clickable {
+    background-color: #fff;
+	border: 1px solid #795639;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+.clickable:hover {
+    background-color: #cecdca;
+}
+
+.clickable:active{
+    background-color: #b6b4af;
+}
+
+
+.activities-attribute {
+    font-size: 24px;
+    font-weight: bold;
+}
+.activities-attribute-label {
+    font-size: 14px;
+    color: gray;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 5px;
+    background-color: #f7f2ee;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid #795639;
+    padding: 20px;
+}
+.header div {
+    flex: 1;
+    text-align: center;
+}
+.map {
+    height: 500px;
+    border: 2px solid #f7f2ee;
+}
