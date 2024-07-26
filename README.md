@@ -18,9 +18,9 @@
 El usuario da autorización para que la aplicación pueda leer las actividades que tiene almacenadas en Strava.
 
 La autorización se realiza mediante el flujo de credenciales de cliente del estándar **OAuth2.0**.
-![](/images/PastedImage20240725200315.png)
+![](/docs/PastedImage20240725200315.png)
 
 Una vez otorgada la autorización el usuario puede seleccionar un intervalo de fechas para ver el resumen de sus actividades en ese periodo específico.
 El resumen muestra la cantidad de actividades completadas en ese periodo, la distancia y duración acumulada, y un mapa de calor que permite ver las zonas transitadas con mayor frecuencia.
 
-![](/images/PastedImage20240725155020.png)
+![](/docs/PastedImage20240725155020.png)
