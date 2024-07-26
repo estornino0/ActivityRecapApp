@@ -1,8 +1,7 @@
-package com.example.Application;
+package com.example.Application.ControllersTests;
 
 import com.example.Application.controllers.AuthorizedUserController;
 import com.example.Application.service.AuthorizationProcessor;
-import com.example.Application.stravaProxies.StravaApiAccessProxy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -13,9 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 
 public class AuthorizedUserCotrollerTest {
-
-    @Mock
-    private StravaApiAccessProxy stravaApiAccessProxy;
 
     @Mock
     private AuthorizationProcessor authorizationProcessor;
@@ -29,10 +25,15 @@ public class AuthorizedUserCotrollerTest {
     }
 
     @Test
-    public void testauthorizationIsRemovedWhenDeauthorizeEndpointIsHit(){
-
-        String result = authorizedUserController.deauthorizeUser();
-        assertEquals("redirect:/", result);
+    public void testAuthorizationIsRemovedWhenDeauthorizeEndpointIsHit(){
+        String actualResult = authorizedUserController.deauthorizeUser();
+        assertEquals("redirect:/", actualResult);
         verify(authorizationProcessor).deauthorize();
+    }
+
+    @Test
+    public void testActivitiesRecapEndpointReturnsActivityRecapPageName(){
+        String actualResult = authorizedUserController.activitiesWrap();
+        assertEquals("activityRecap", actualResult);
     }
 }

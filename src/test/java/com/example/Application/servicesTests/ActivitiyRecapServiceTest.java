@@ -1,4 +1,4 @@
-package com.example.Application;
+package com.example.Application.servicesTests;
 
 import com.example.Application.model.DateInterval;
 import com.example.Application.model.Activity;

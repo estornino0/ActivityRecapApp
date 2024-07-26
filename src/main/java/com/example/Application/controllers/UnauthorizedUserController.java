@@ -21,7 +21,7 @@ public class UnauthorizedUserController {
     }
 
     @GetMapping("/oauth")
-    public String auth(@RequestParam String code, @RequestParam String scope, Model model){
+    public String auth(@RequestParam String code, @RequestParam String scope){
         authorizationProcessor.authorizeUser(code, scope);
         return "redirect:/activityRecap";
     }

@@ -5,7 +5,6 @@ import feign.RequestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 
-//@Configuration
 public class FeignTokenExchangeConfiguration {
 
     @Value("${strava.client-id}")

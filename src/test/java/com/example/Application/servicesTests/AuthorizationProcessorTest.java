@@ -1,4 +1,4 @@
-package com.example.Application;
+package com.example.Application.servicesTests;
 
 import com.example.Application.feignConfig.FeignApiAccessConfiguration;
 import com.example.Application.model.AuthorizationDetails;

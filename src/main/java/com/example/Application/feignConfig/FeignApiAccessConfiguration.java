@@ -3,9 +3,17 @@ package com.example.Application.feignConfig;
 import com.example.Application.model.UserSession;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.PropertySource;
 
 public class FeignApiAccessConfiguration {
+
+    @Value("${strava.client-id}")
+    private String clientId;
+
+    @Value("${strava.client-secret}")
+    private String clientSecret;
 
     private UserSession userSession;
 
@@ -18,13 +26,12 @@ public class FeignApiAccessConfiguration {
         return new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {
-//                requestTemplate.header("Authorization", "Bearer " + "e1afaedc665e8ad1a280f47af612001e8ee33081");
-
                 if(userSession.isTokenValid()) {
                     requestTemplate.header("Authorization", "Bearer " + userSession.getAccessToken());
                 } else {
-                    requestTemplate.query("client_id", "${strava.client-id}");
-                    requestTemplate.query("client_secret", "${strava.client-secret}");
+                    System.out.println(clientId);
+                    requestTemplate.query("client_id", clientId);
+                    requestTemplate.query("client_secret", clientSecret);
                     requestTemplate.query("grant_type", "refresh_token");
                     requestTemplate.query("refresh_token", userSession.getRefreshToken());
                 }
